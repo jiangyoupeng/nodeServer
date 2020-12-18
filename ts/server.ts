@@ -1,13 +1,13 @@
 // import express from 'express';
 // import ws from 'ws';
 import * as ws from 'ws';
-import * as https  from 'https';
+import * as http  from 'http';
 
 //指定開啟的 port
 const PORT = 3000
 
 //創建 express 的物件，並綁定及監聽 3000 port ，且設定開啟後在 console 中提示
-const server = https.createServer()
+const server = http.createServer()
     .listen(PORT, () => console.log(`Listening on ${PORT}`))
 //將 express 交給 SocketServer 開啟 WebSocket 的服務
 const wss = new ws.Server({ server })
@@ -22,6 +22,7 @@ wss.on('connection', wsSocket => {
     })
     
     wsSocket.on('message', (event) => {
+        console.log(event)
         console.log("event.data " + event)
         setTimeout(() => {
             wsSocket.send("321")

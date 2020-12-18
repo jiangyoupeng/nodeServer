@@ -3,11 +3,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // import express from 'express';
 // import ws from 'ws';
 var ws = require("ws");
-var https = require("https");
+var http = require("http");
 //指定開啟的 port
 var PORT = 3000;
 //創建 express 的物件，並綁定及監聽 3000 port ，且設定開啟後在 console 中提示
-var server = https.createServer()
+var server = http.createServer()
     .listen(PORT, function () { return console.log("Listening on " + PORT); });
 //將 express 交給 SocketServer 開啟 WebSocket 的服務
 var wss = new ws.Server({ server: server });
@@ -20,6 +20,7 @@ wss.on('connection', function (wsSocket) {
         console.log('Close connected');
     });
     wsSocket.on('message', function (event) {
+        console.log(event);
         console.log("event.data " + event);
         setTimeout(function () {
             wsSocket.send("321");
