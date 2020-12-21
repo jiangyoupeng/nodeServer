@@ -2,7 +2,10 @@
 // import ws from 'ws';
 import * as ws from 'ws';
 import * as http  from 'http';
+import { NetMsgRef } from './jypFrame/netMsg/NetMsgRef';
+import { UserConnection } from './game/UserConnection';
 
+NetMsgRef
 //指定開啟的 port
 const PORT = 3000
 
@@ -12,8 +15,14 @@ const server = http.createServer()
 //將 express 交給 SocketServer 開啟 WebSocket 的服務
 const wss = new ws.Server({ server })
 
+let connectUserMap: Map<number, UserConnection> = new Map()
+
+let connectId = 0
 //當 WebSocket 從外部連結時執行
-wss.on('connection', wsSocket => {
+wss.on('connection', (wsSocket, msg: http.IncomingMessage) => {
+
+    let cachConnectId = connectId++
+    console.log(msg)
     //連結時執行此 console 提示
     console.log('Client connected')
     //當 WebSocket 的連線關閉時執行
@@ -22,6 +31,7 @@ wss.on('connection', wsSocket => {
     })
     
     wsSocket.on('message', (event) => {
+        console.log('cachConnectId ' + cachConnectId)
         console.log(event)
         console.log("event.data " + event)
         setTimeout(() => {

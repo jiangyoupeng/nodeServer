@@ -1,0 +1,17 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.UserConnection = void 0;
+// 每次有一个socket 连接成功 就会有形成一个user connection
+var UserConnection = /** @class */ (function () {
+    function UserConnection() {
+        // 用户uid
+        this._uid = null;
+    }
+    // 触发连接成功时
+    UserConnection.prototype.onConnectSuccess = function () {
+    };
+    UserConnection.prototype.onConnectFailed = function () { };
+    return UserConnection;
+}());
+exports.UserConnection = UserConnection;
+//# sourceMappingURL=UserConnection.js.map
