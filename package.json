@@ -18,9 +18,11 @@
   "homepage": "https://github.com/jiangyoupeng/nodeServer#readme",
   "dependencies": {
     "@types/node": "^14.14.14",
+    "protobufjs": "^6.10.2",
     "ws": "^7.4.1"
   },
   "devDependencies": {
     "@types/ws": "^7.4.0"
-  }
+  },
+  "type": "module"
 }

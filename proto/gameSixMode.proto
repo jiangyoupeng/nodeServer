@@ -5,13 +5,6 @@ package pb;
 import "base.proto";
 import "game.proto";
 
-option cc_generic_services = true;
-option java_generic_services = true;
-option py_generic_services = true;
-
-option java_package = "com.yy.wolfkill.h5game.ludoking.pb";
-option java_multiple_files = true;
-
 message MatchSixModeReq{
     int32 grade = 1;//初中高 ，1表示初级， 2表示中级， 3表示高级
 

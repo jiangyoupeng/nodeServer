@@ -2,12 +2,21 @@ syntax = "proto3";
 
 package pb;
 
-option cc_generic_services = true;
-option java_generic_services = true;
-option py_generic_services = true;
+// 客户端发送给服务端的数据流
+message streamReq {
+    int64 connectId = 1;    //连接的id
+    int64 seq = 2;          //客户端消息序列
+    string msgName = 3;     //消息名
+    bytes msgData = 4;      //消息数据
+}
 
-option java_package = "com.yy.wolfkill.h5game.ludoking.pb";
-option java_multiple_files = true;
+//服务端发送给客户端的数据流
+message streamRes {
+    int64 connectId = 1;    //连接的id
+    int64 seq = 2;          //客户端消息序列
+    string msgName = 3;     //消息名
+    bytes msgData = 4;      //消息数据
+}
 
 message LoginRes {
     int32 code = 1; //code = 10000 出现错误，版本有问题，需要退出重连。

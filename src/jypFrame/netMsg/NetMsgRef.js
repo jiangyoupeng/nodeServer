@@ -88,9 +88,11 @@ var HeartReq_1 = require("./HeartReq");
 var UnvarnishedReq_1 = require("./UnvarnishedReq");
 var ReadyReq_1 = require("./ReadyReq");
 var LoadProgressReq_1 = require("./LoadProgressReq");
+var streamReq_1 = require("./streamReq");
 var NetMsgRef = /** @class */ (function () {
     function NetMsgRef() {
     }
+    NetMsgRef.streamReqHandle = streamReq_1.streamReqHandle;
     NetMsgRef.LoadProgressReqHandle = LoadProgressReq_1.LoadProgressReqHandle;
     NetMsgRef.ReadyReqHandle = ReadyReq_1.ReadyReqHandle;
     NetMsgRef.UnvarnishedReqHandle = UnvarnishedReq_1.UnvarnishedReqHandle;

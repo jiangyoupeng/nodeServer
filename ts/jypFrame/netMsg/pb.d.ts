@@ -2,6 +2,132 @@ import * as $protobuf from "protobufjs";
 /** Namespace pb. */
 export namespace pb {
 
+    /** Properties of a streamReq. */
+    interface IstreamReq {
+
+        /** streamReq connectId */
+        connectId?: (number|null);
+
+        /** streamReq seq */
+        seq?: (number|null);
+
+        /** streamReq msgName */
+        msgName?: (string|null);
+
+        /** streamReq msgData */
+        msgData?: (Uint8Array|null);
+    }
+
+    /** Represents a streamReq. */
+    class streamReq implements IstreamReq {
+
+        /**
+         * Constructs a new streamReq.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: pb.IstreamReq);
+
+        /** streamReq connectId. */
+        public connectId: number;
+
+        /** streamReq seq. */
+        public seq: number;
+
+        /** streamReq msgName. */
+        public msgName: string;
+
+        /** streamReq msgData. */
+        public msgData: Uint8Array;
+
+        /**
+         * Creates a new streamReq instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns streamReq instance
+         */
+        public static create(properties?: pb.IstreamReq): pb.streamReq;
+
+        /**
+         * Encodes the specified streamReq message. Does not implicitly {@link pb.streamReq.verify|verify} messages.
+         * @param message streamReq message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: pb.IstreamReq, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a streamReq message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns streamReq
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): pb.streamReq;
+    }
+
+    /** Properties of a streamRes. */
+    interface IstreamRes {
+
+        /** streamRes connectId */
+        connectId?: (number|null);
+
+        /** streamRes seq */
+        seq?: (number|null);
+
+        /** streamRes msgName */
+        msgName?: (string|null);
+
+        /** streamRes msgData */
+        msgData?: (Uint8Array|null);
+    }
+
+    /** Represents a streamRes. */
+    class streamRes implements IstreamRes {
+
+        /**
+         * Constructs a new streamRes.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: pb.IstreamRes);
+
+        /** streamRes connectId. */
+        public connectId: number;
+
+        /** streamRes seq. */
+        public seq: number;
+
+        /** streamRes msgName. */
+        public msgName: string;
+
+        /** streamRes msgData. */
+        public msgData: Uint8Array;
+
+        /**
+         * Creates a new streamRes instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns streamRes instance
+         */
+        public static create(properties?: pb.IstreamRes): pb.streamRes;
+
+        /**
+         * Encodes the specified streamRes message. Does not implicitly {@link pb.streamRes.verify|verify} messages.
+         * @param message streamRes message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: pb.IstreamRes, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a streamRes message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns streamRes
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): pb.streamRes;
+    }
+
     /** Properties of a LoginRes. */
     interface ILoginRes {
 

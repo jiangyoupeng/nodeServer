@@ -85,7 +85,9 @@ import { HeartReqHandle } from './HeartReq';
 import { UnvarnishedReqHandle } from './UnvarnishedReq';
 import { ReadyReqHandle } from './ReadyReq';
 import { LoadProgressReqHandle } from './LoadProgressReq';
+import { streamReqHandle } from './streamReq';
 export declare class NetMsgRef {
+    static readonly streamReqHandle: typeof streamReqHandle;
     static readonly LoadProgressReqHandle: typeof LoadProgressReqHandle;
     static readonly ReadyReqHandle: typeof ReadyReqHandle;
     static readonly UnvarnishedReqHandle: typeof UnvarnishedReqHandle;

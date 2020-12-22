@@ -4,13 +4,6 @@ package pb;
 
 import "base.proto";
 
-option cc_generic_services = true;
-option java_generic_services = true;
-option py_generic_services = true;
-
-option java_package = "com.yy.wolfkill.h5game.ludoking.pb";
-option java_multiple_files = true;
-
 message GetAllSkin2Req{
 
 
